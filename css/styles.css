@@ -1,0 +1,238 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+
+/*  Globales **/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /* Hack para Box Model **/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.63);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.63);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+/* Botones */
+.button {
+    text-decoration: none;
+    color: var(--blanco);
+    background-color: var(--secundario);
+    padding: 1rem 3rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    width: 90%;
+    margin-top: 3rem;
+    font-size: 2rem;
+    border: none;
+}
+.button:hover {
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+    }
+}
+
+span {
+    font-size: 2rem;
+}
+
+/* Barra navegacion */
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .nav-main {
+        flex-direction: row;
+    }
+}
+
+.nav-main a {
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 2rem;
+}
+.nav-main a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/* Banner */
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 450px;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    position: absolute;
+    background-color: rgba( 0,0,0, .7 ); 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h2,
+.hero-content p {
+    color: var(--blanco);
+}
+
+.hero-content .location {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Servicios */
+@media (min-width: 768px) {
+    .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* equivale a 33.3% cada columna*/
+        column-gap: 1.5rem;
+    }
+}    
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.service p {
+    text-align: center;
+    line-height: 2;
+}
+
+.service .my-icon {
+    background-color: var(--primario);
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Contacto */
+.contact {
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.contact fieldset {
+    color: var(--primario);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-width: 0;
+    margin-bottom: 1rem;
+}
+
+.field {
+    color: var(--blanco);
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.field label {
+    display: block;
+}
+
+.field-text {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: none;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .field-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.field-send {
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .field-send {
+        display: flex;
+        justify-content: flex-end;
+    }    
+}
+
+.field-text[type="textarea"] {
+    height: 20rem;
+}
+
+footer p {
+    text-align: center;
+}
